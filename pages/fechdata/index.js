@@ -30,9 +30,9 @@ estaran disponibles para que google o motores de busqueda puedan visualizar la w
 renderizar su contenido
 */
 export async function getStaticProps() {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users')
+    const res = await fetch('https://jsonplaceholder.typicode.com/users/')
     const injson = await res.json()
-        console.log(injson)
+        // console.log(injson)
         /*
         esto se renderiza del lado del servidor por lo que 
         el ersultado se vera en la pantalla en donde se eje

@@ -18,12 +18,24 @@ de que no enviemmos parametros el puede considerar
 usar uno de estos
 */
 export async function getStaticPaths() {
+
+
+  const allrest = await fetch('https://jsonplaceholder.typicode.com/users')
+  const predata = await allrest.json() 
+  predata.map(data=>{
+    return{
+      paths:{
+        params:{dataid: data.id }
+      }
+    } 
+  })
+
     return {
-      paths: [
-          { params: { dataid : '1'  } },
-          { params: { dataid : '2'  } },
-          { params: { dataid : '3'  } },
-        ],
+      // paths: [
+      //     { params: { dataid : '1'  } },
+      //     { params: { dataid : '2'  } },
+      //     { params: { dataid : '3'  } },
+      //   ],
      /*
      en el pre render el parametro fallback le indica a next
       que si no encuentra uno de estos parametros creados en '
@@ -32,6 +44,7 @@ export async function getStaticPaths() {
       datos en caso de no estar registrados unos de estos paramentros
       en la lista 
      */
+       paths:[allrest],
       fallback: true
     }
   }
@@ -63,3 +76,7 @@ export async function getStaticProps(context) {
     }
   } 
 export default Onlydata
+
+
+
+// https://blog.jarrodwatts.com/the-ultimate-guide-to-firebase-with-nextjs
