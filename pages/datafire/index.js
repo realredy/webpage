@@ -1,19 +1,19 @@
  
-import firebase from "../../firebase/firebase";
-import { useCollection } from "react-firebase-hooks/firestore";
+import firebase from 'firebase/app'; 
+import 'firebase/firestore';
+// import { useCollection } from "react-firebase-hooks/firestore";
+
+
+
+
 let Home = ()=> {
 
 
-  const [img] = useCollection(
-    firebase.firestore().collection("blog-cogigos"),
-    {}
-  );
-  console.log(img)
-  
-  if (!img) {
-    img.docs.map((doc) => console.log(doc.data()));
-  }
-
+   firebase.firestore().collection('blog-cogigo').add({
+    data:'cocola'
+  }).then(data=>data.json()).then(datas=>console.log(datas))  
+   
+     
 
 return (
     <>

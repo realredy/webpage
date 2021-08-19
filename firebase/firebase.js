@@ -1,6 +1,7 @@
-import firebase from 'firebase/app';
+import  firebase from "firebase";
 import 'firebase/firestore';
-const firebaseConfig = { 
+
+const config = { 
     apiKey:process.env.FIRE_APIKEY , 
     authDomain:process.env.FIRE_AUTHDOMAIN  , 
     databaseURL:process.env.FIRE_DATABASE_URL  , 
@@ -9,7 +10,7 @@ const firebaseConfig = {
     messagingSenderId:process.env.FIRE_MESSAGE_SEND_ID, 
     appId:process.env.FIRE_API_ID
   };
-  if(!firebase.apps.length){
-      firebase.initializeApp(firebaseConfig);
-  }
-  export default firebase;
+
+  export default !firebase.apps.length 
+  ? firebase.initializeApp(config).firestore()
+  : firebase.app().firestore();
