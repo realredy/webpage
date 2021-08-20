@@ -1,6 +1,8 @@
- import firebase from 'firebase/App'; 
+ import firebase from 'firebase'; 
+ import '../../firebase/firebase';
 import 'firebase/firestore';
  
+    
     
 let Home = ({mydata})=> {
  
@@ -13,7 +15,7 @@ return (
               <h3>{doc.title}</h3>
               <section id="textTransform"> {doc.text}</section> 
              <img src={doc.img} />
-            
+             
             </section>
              )   
         })
@@ -32,7 +34,7 @@ export async function getStaticProps() {
          }) 
       return {
         props: {
-          mydata:  JSON.stringify(pre),
+          mydata: JSON.stringify(pre),
         },
       }
    }
