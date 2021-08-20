@@ -1,7 +1,7 @@
  import firebase from 'firebase'; 
  import '../../firebase/firebase';
 import 'firebase/firestore';
- 
+import parse from 'html-react-parser';
     
     
 let Home = ({mydata})=> {
@@ -10,10 +10,11 @@ return (
      <>
     {
       JSON.parse(mydata).map(function(doc, i){  
+       let htm = parse(doc.text);
           return(
             <section key={i}>
               <h3>{doc.title}</h3>
-              <section id="textTransform"> {doc.text}</section> 
+              <section id="textTransform"> {htm}</section> 
              <img src={doc.img} />
              
             </section>
