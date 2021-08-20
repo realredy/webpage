@@ -1,24 +1,21 @@
- 
-import firebase from 'firebase/App'; 
+ import firebase from 'firebase/App'; 
 import 'firebase/firestore';
- import { useCollection } from "react-firebase-hooks/firestore";
-
  
     
 let Home = ({mydata})=> {
  
-    // console.log('mydata >🧐<', [mydata] )
-  
-    
 return (
      <>
     {
-      [mydata].map(function(dif){
-        
-        console.log('map >🧐<',dif )
- 
-
-
+      JSON.parse(mydata).map(function(doc, i){  
+          return(
+            <section key={i}>
+              <h3>{doc.title}</h3>
+              <section id="textTransform"> {doc.text}</section> 
+             <img src={doc.img} />
+            
+            </section>
+             )   
         })
     }
     </>
@@ -27,48 +24,21 @@ return (
   }
   
 
-export async function getStaticProps() {  
-     
-      let getAlldata = [];
-
-     let data = await firebase.firestore().collection('sistemLikes').get(); 
-     data.forEach(function(doc) { 
-      let datosGet = doc.data(); 
-      //    console.log('doc:::',doc.id)
-      getAlldata.push({data:datosGet, id:doc.id}) 
-     }) 
+export async function getStaticProps() {   
+     let data = await firebase.firestore().collection('blog-cogigos').get(); 
+         let tata = data.docs; 
+        let pre = tata.map((fix)=>{ 
+          return fix.data();  
+         }) 
       return {
         props: {
-          mydata: JSON.stringify(getAlldata),
+          mydata:  JSON.stringify(pre),
         },
       }
-      }
+   }
 
-    // })
-   
-
-
-
-  // let cocu =  data.data();
-  
-    //  console.log(cocu)
-      
-      /*
-      esto se renderiza del lado del servidor por lo que 
-      el ersultado se vera en la pantalla en donde se eje
-      cuta {npm dev} y no en la consola del navegador
-      */
-//   return {
-//     props: {
-//       mydata: JSON.stringify(allData),
-//     },
-//   }
-// }
-
-
-
-  
 
 
   export default Home
+
   
