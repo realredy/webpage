@@ -1,7 +1,7 @@
  import firebase from 'firebase'; 
- import '../../firebase/firebase';
+import {db} from '../../firebase/firebase';
 import 'firebase/firestore';
-import parse from 'html-react-parser';
+import parse from 'html-react-parser'; 
     
     
 let Home = ({mydata})=> {
@@ -15,8 +15,7 @@ return (
             <section key={i}>
               <h3>{doc.title}</h3>
               <section id="textTransform"> {htm}</section> 
-             <img src={doc.img} />
-             
+             <img src={doc.img} alt="Vercel Logo" /> 
             </section>
              )   
         })
@@ -28,7 +27,7 @@ return (
   
 
 export async function getStaticProps() {   
-     let data = await firebase.firestore().collection('blog-cogigos').get(); 
+     let data = await firebase.firestore(db).collection('blog-cogigos').get(); 
          let tata = data.docs; 
         let pre = tata.map((fix)=>{ 
           return fix.data();  

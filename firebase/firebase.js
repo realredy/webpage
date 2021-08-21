@@ -11,6 +11,6 @@ const config = {
     appId:process.env.FIRE_API_ID
   };
 
-  export default !firebase.apps.length 
-  ? firebase.initializeApp(config).firestore()
-  : firebase.app().firestore();
+  export  const db = !firebase.apps.length 
+  ? firebase.initializeApp(config)
+  : firebase.app();
