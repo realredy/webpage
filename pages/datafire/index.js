@@ -2,7 +2,11 @@
 import {db} from '../../firebase/firebase';
 import 'firebase/firestore';
 import parse from 'html-react-parser'; 
-    
+    /*
+    http://react-html-parser::: convierte el contenido de un string
+    HTML a contenido html normal. Esto porque el texto del post
+    viene en formato html convertido en string
+    */
     
 let Home = ({mydata})=> {
  
