@@ -3,7 +3,7 @@ import firebase from 'firebase';
 import {db} from '../firebase/firebase';
 import 'firebase/firestore';
 // import parse from 'html-react-parser'; 
-
+// CLIENT SERVER RENDER 
 const Reactive = () =>{
 
   const [awaitdata, setAwaitdata] = useState([]);
