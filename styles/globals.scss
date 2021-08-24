@@ -1,9 +1,14 @@
+@import '_header.scss';
+@import '_global.scss';
 html,
 body {
   padding: 0;
   margin: 0;
+  background:$background_body;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    color: whitesmoke;
+    background: $background_body;
 }
 
 a {

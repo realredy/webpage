@@ -1,0 +1,24 @@
+//background
+$background_body: rgb(12, 10, 10);
+$base-color: #cb080f;
+
+
+//paddings
+$p-pequeno: 10px;
+$p-mediano: 20px;
+$p-grande: 30px;
+
+//border radius
+$br-peque:  5px;
+$br-mediano:  8px;
+$br-grande:  10px;
+
+@mixin box-general_flex { 
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200%;
+  }

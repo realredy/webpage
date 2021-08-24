@@ -1,0 +1,60 @@
+@import '_global.scss';
+
+.header{
+    background: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    &__wrapper{
+        @include  box-general_flex; 
+          padding: $p-pequeno; 
+    } 
+
+    &__wrapper-right-menu{
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+              ul{
+                  display: flex;
+                  flex-direction: row;
+                   li{
+                       list-style:none;
+                       a{
+                           line-height: 30px;
+                           padding: $p-grande;
+                           cursor: pointer; 
+                       }
+                   }
+                }
+
+
+
+
+        .burger-wrapper{  
+            cursor: pointer; 
+        border: solid 1px $base-color; 
+        border-radius: $br-peque;
+        padding: $p-pequeno; 
+
+            &__line-top,
+            &__line-center,
+            &__line-bottom {
+                width: 40px;
+                border:solid 1px rgb(151, 151, 151);  
+            }
+            &__line-center,
+            &__line-bottom {
+                margin-top: $p-pequeno; 
+            }
+             
+            
+            
+        }
+      }
+   
+    
+}

@@ -1,8 +1,14 @@
 import Link from 'next/link'
+import Head from 'next/head'
 let Newdata = ({mydata})=>{
 
     return(
         <>
+        <Head>
+        <title>Nuevo titulo desde getdata</title>
+        <meta name="description" content="la manera de cambiar el estado" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
             <ul>
         {mydata.map((data, y)=>(
             
