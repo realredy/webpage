@@ -1,12 +1,29 @@
 import Image from 'next/image' 
 import Link from 'next/link'
+import Head from 'next/head' 
 
-let active_menu = ()=>{
+ let blockScroll = ()=>{
+    window.onscroll = ()=>{
+         var y = window.scrollY
+         console.log(y)
+        
+ 
+    }
 
-}
+   
+ }
 
+
+
+ 
 let Header = () =>{
     return (
+        <>
+        <Head>
+        <title>Por defecto</title>
+        <meta name="description" content="la manera de cambiar el estado" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
         <header className="header">
              <div className="header__wrapper"> 
                  <div className="header__wrapper-logo">
@@ -21,7 +38,7 @@ let Header = () =>{
                        <Link href="/getdata">
                          <li>
                          <a>
-                               Getdata
+                               blog
                         </a>
                         </li>
                    </Link>
@@ -30,7 +47,7 @@ let Header = () =>{
                    <Link href="/fechdata">
                          <li>
                          <a>
-                               fechdata
+                               about me
                         </a>
                         </li>
                    </Link>
@@ -38,21 +55,41 @@ let Header = () =>{
                    <Link href="/datafire">
                          <li>
                          <a>
-                            datafire
+                            Contacto
                         </a>
                         </li>
                    </Link>
                          </ul>
-                         <div onClick={active_menu} className="burger-wrapper">
+                         <div className="burger-wrapper">
+                            <span onMouseEnter={blockScroll} className="triguer_mn"></span>
                              <li className="burger-wrapper__line-top"></li>
                              <li className="burger-wrapper__line-center"></li>
                              <li className="burger-wrapper__line-bottom"></li>
+
+                             <section className="header__bigpanel">
+              <div className="bigpanel_wrapper">
+                  <ul className="bigpanel_wrapper__menuLeft">
+                      <li><a href="">Javascript</a></li>
+                      <li><a href="">Base de datos</a></li>
+                      <li><a href="">php</a></li>
+                      <li><a href="">Maquetación</a></li>
+                      <li><a href="">Gitlab</a></li>
+                      <li><a href="">WebPack</a></li>
+                  </ul>
+                  <ul className="bigpanel_wrapper__menuRight">
+                      <li><a href="">Diseño Gráfico</a></li>
+                      <li><a href="">Producción</a></li>
+                      <li><a href="">Diagramación</a></li> 
+                  </ul>
+              </div>
+            </section>
+            
                          </div>
                     
                   </div>
-            </div>  
-             
-      </header>        
+            </div>   
+      </header>   
+           </>
     )
 }
 export default Header

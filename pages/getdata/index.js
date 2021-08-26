@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import Head from 'next/head'
+import Spacer from '../../components/spacer'
 let Newdata = ({mydata})=>{
 
     return(
         <>
+        <Spacer />
         <Head>
         <title>Nuevo titulo desde getdata</title>
         <meta name="description" content="la manera de cambiar el estado" />

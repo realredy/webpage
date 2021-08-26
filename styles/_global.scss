@@ -1,6 +1,7 @@
 //background
 $background_body: rgb(12, 10, 10);
 $base-color: #cb080f;
+$light_gray: rgb(151, 151, 151);  
 
 
 //paddings
@@ -8,10 +9,20 @@ $p-pequeno: 10px;
 $p-mediano: 20px;
 $p-grande: 30px;
 
+//breackpoints
+$screen-bigger: 1400px;
+$screen-normal: 1200px;
+$screen-tablet: 1000px;
+$screen-tablet-portail: 800px;
+$screem-mobile:600px;
+$screen-small:400px;
+
 //border radius
 $br-peque:  5px;
 $br-mediano:  8px;
 $br-grande:  10px;
+
+$transform4:all 0.4s;
 
 @mixin box-general_flex { 
     list-style: none;
@@ -20,5 +31,21 @@ $br-grande:  10px;
     justify-content: space-between;
     align-items: center;
     width: 80%;
-    max-width: 1200%;
+    max-width: $screen-normal;
+  }
+  @mixin box-width {
+    width: 80%;
+    max-width: $screen-normal;
+    margin:0 auto;
+    @media (max-width: $screen-normal){
+      width: 99%;
+      padding: 0;
+    }
+  }
+  @mixin flex-row-betwen-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
   }

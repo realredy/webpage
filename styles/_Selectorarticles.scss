@@ -1,0 +1,69 @@
+@import '_global.scss';
+#home_body{ 
+  @include flex-row-betwen-center;
+  .leftImage{
+     width: 15%;
+     min-width: 250px;
+     @media (max-width: $screen-normal){
+         display:none;
+     }
+  }
+  .right_TabsText{
+      width: 73%;
+      display: flex;
+      padding: 15px;
+      @media (max-width: $screen-normal){
+        width: 100%;
+      }
+      @media (max-width: $screen-tablet-portail){
+        flex-direction: column;
+        padding: unset;
+      }
+      .boxTags {
+        width: 20%;
+        padding-left: 30px;
+        @media (max-width: $screen-tablet-portail){
+            width: 100%;
+            padding-left: unset;
+          }
+        ul{
+            padding: 0;
+            margin: 0;
+             li {
+                list-style: none;
+                line-height: 50px;
+                background: #171717;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 5px;
+                &:hover {
+                    cursor: pointer;
+                    background: $base-color;
+                }
+            }
+            .selectedHome {
+                background: $base-color;
+            }
+        }
+      }
+      .textBox {
+        width: 80%;
+        background: $base-color;
+        max-height: 400px;
+        overflow: hidden;
+        position: relative;
+        padding: 15px 0;
+        box-sizing: border-box;
+        @media (max-width: $screen-tablet-portail){
+            width: 100%;
+            padding-left: unset;
+          }
+        #innerTextBox {
+             width: 105%;
+            height: 300px;
+            overflow: auto;
+            padding: 0 40px;
+        }
+    }
+  }
+}

@@ -1,7 +1,9 @@
 @import '_header.scss';
 @import '_global.scss';
-html,
-body {
+@import '_home.scss';
+@import '_Selectorarticles.scss';
+
+html,body {
   padding: 0;
   margin: 0;
   background:$background_body;
@@ -18,4 +20,7 @@ a {
 
 * {
   box-sizing: border-box;
+}
+.home{
+
 }

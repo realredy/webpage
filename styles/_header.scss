@@ -1,60 +1,184 @@
 @import '_global.scss';
 
+
 .header{
-    background: black;
+    background: rgb(0, 0, 0);
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    box-shadow: -2px -5px 20px $base-color;
+    position: fixed; 
+    top: 0;
+    z-index: 999;
 
     &__wrapper{
         @include  box-general_flex; 
-          padding: $p-pequeno; 
+          padding: 7px; 
     } 
 
     &__wrapper-right-menu{
-        height: 50px;
+        height: 35px;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
               ul{
                   display: flex;
                   flex-direction: row;
+                  padding: 0;
+                  margin: 0;
                    li{
                        list-style:none;
+                       position: relative;
+                       margin-right: 20px;
                        a{
-                           line-height: 30px;
-                           padding: $p-grande;
-                           cursor: pointer; 
-                       }
-                   }
-                }
+                        line-height: 40px;
+                        padding: 0 5px;
+                        cursor: pointer;
+                        color:$light_gray;  
 
+                        &:before {
+                            content: "";
+                            display: block;
+                            width: 100%; 
+                             position: absolute; 
+                            border-bottom: solid 1px transparent;
+                            bottom: -20px;
+                            left: 0; 
+                            transition: all 0.4s;
+                          }
+                          &:hover::before{
+                            bottom: -5px;
+                         border-bottom: solid 1px $base-color;
+                         opacity: .7;
+                       }
+                                
+                   }
+                   
+                  }
+                }
 
 
 
         .burger-wrapper{  
             cursor: pointer; 
-        border: solid 1px $base-color; 
-        border-radius: $br-peque;
-        padding: $p-pequeno; 
+            border: solid 1px $base-color; 
+            border-radius: $br-peque;
+            padding: 8px; 
+            position: relative;
+
+        &:hover .header__bigpanel{ 
+            opacity: 1!important;
+            height: unset!important;
+            overflow: hidden!important; 
+            top: 57px;
+            transition: all 0.4s;
+            -moz-transition: all 0.4s;
+           
+        }
+//=================================================
+
+        .header__bigpanel{
+            position: fixed;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.842); 
+            top: 100px;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+            transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            width: 100%;
+            z-index: 9999;
+            .bigpanel_wrapper{
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                width: 70%;
+                padding: $p-grande;
+                .bigpanel_wrapper__menuLeft{
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    flex-direction: column;
+                    li{
+                        list-style: none;
+                        a{
+                            color:$light_gray;
+                            font-weight: 800;
+                            font-size: 2em;
+                            line-height: 50px;
+                            border-bottom: solid 1px transparent;
+                            transition: all 0.4s;
+                            &:hover{
+                                color: white;
+                                border-bottom: solid 1px $base-color;
+                            }
+                            &:hover::before{ 
+                                border-bottom: unset; 
+                             }
+                        }
+                    }
+
+                }
+                .bigpanel_wrapper__menuRight{
+                    display: flex;
+                    flex-direction: column;
+                    li{
+                        list-style: none;
+                        a{
+                            border-bottom: solid 1px transparent;
+                            transition: all 0.4s;
+                            font-size: 1em;
+                            line-height: 30px;
+                            color:$light_gray;
+                            &:hover{
+                                
+                                color: white;
+                                border-bottom: solid 1px $base-color;
+                            }
+                            &:hover::before{ 
+                                border-bottom: unset; 
+                             }
+                        }
+                    }
+            }
+            }
+        }
+
+
+//=================================================
+
+
+
+        .triguer_mn {
+            position: absolute;
+            z-index: 3;
+            width: 40px;
+            height: 33px;
+            background: #fff0;
+            left: 0;
+            top: 0; 
+        }
 
             &__line-top,
             &__line-center,
             &__line-bottom {
-                width: 40px;
-                border:solid 1px rgb(151, 151, 151);  
+                width: 25px;
+                border-top:solid 1px $light_gray; 
             }
             &__line-center,
             &__line-bottom {
-                margin-top: $p-pequeno; 
+                margin-top: 7px; 
             }
              
             
             
         }
-      }
-   
-    
+      } 
 }
+

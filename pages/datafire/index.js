@@ -2,6 +2,7 @@
 import {db} from '../../firebase/firebase';
 import 'firebase/firestore';
 import parse from 'html-react-parser'; 
+import Spacer from '../../components/spacer';
     /*
     http://react-html-parser::: convierte el contenido de un string
     HTML a contenido html normal. Esto porque el texto del post
@@ -12,6 +13,7 @@ let Home = ({mydata})=> {
  
 return (
      <>
+     <Spacer />
     {
       JSON.parse(mydata).map(function(doc, i){  
        let htm = parse(doc.text);
