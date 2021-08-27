@@ -1,0 +1,261 @@
+.wrapperPrf {
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.prf_left {
+    width: 50%; 
+}
+
+.prf_right {
+    width: 65%; 
+}
+
+
+
+
+
+
+.prf_aros {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.prf_red {
+    border: 10px solid #c90810;
+    border-radius: 50%;
+    border-right: 10px solid transparent;
+    width: 280px;
+    height: 280px;
+    transform: rotate(-35deg);
+}
+.prf_grisSuave {
+    border: 10px solid #909090;
+    border-radius: 50%;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    width: 260px;
+    height: 260px;
+    transform: rotate(46deg);
+}
+.prf_gris {
+    border: 10px solid #585858;
+    border-radius: 50%;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    width: 240px;
+    height: 240px;
+    transform: rotate(46deg);
+}
+.prf_aros span {
+        width: 150px;
+        display: block; 
+        font-weight: 100;
+        font-size: 1.3em;
+        line-height: 20px;
+        text-align: right;
+        color: #909090;
+        position:absolute;
+}
+
+.prf_descripcionAros ul {
+    margin-left: 30px;
+}
+.prf_descripcionAros ul li {
+    list-style: none;
+    font-weight: 100;
+    color: #909090;
+    position: relative;
+}
+.prf_descripcionAros ul li:nth-child(1):before,
+.prf_descripcionAros ul li:nth-child(2):before,
+.prf_descripcionAros ul li:nth-child(3):before {
+    content: "";
+    margin: 0 5px 0 0;
+    height: 8px;
+    width: 8px;
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: -15px;
+}
+.prf_descripcionAros ul li:nth-child(1):before{ 
+    background: #c90810;
+}
+.prf_descripcionAros ul li:nth-child(2):before{ 
+    background: #909090;
+}
+.prf_descripcionAros ul li:nth-child(3):before{ 
+    background: #585858;
+}
+
+
+/*==animaciones===*/
+.prf_gris {
+    animation-name: animaciongris;
+  animation-duration: 70s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  }
+  
+  
+  @keyframes animaciongris {
+      0% {transform: rotate(85deg)}
+      50% {transform: rotate(5deg)}
+    100% {transform: rotate(85deg)}
+    }
+    
+    
+    .prf_grisSuave {
+    animation-name: animacionGrisOsc;
+  animation-duration: 70s;
+  animation-iteration-count: infinite;
+      animation-delay: 0.5s;
+      animation-timing-function: linear;
+  }
+  
+  
+  @keyframes animacionGrisOsc {
+      0% {transform: rotate(85deg)}
+      50% {transform: rotate(5deg)}
+    100% {transform: rotate(85deg)} 
+    }
+  
+   .prf_red {
+    animation-name: animacionRojo;
+  animation-duration: 70s;
+  animation-iteration-count: infinite;
+      animation-delay: 0.5s;
+      animation-timing-function: linear;
+  }
+  
+  
+  @keyframes animacionRojo {
+      0% {transform: rotate(85deg)}
+      50% {transform: rotate(5deg)}
+    100% {transform: rotate(85deg)} 
+    }
+  /*==animaciones===*/
+
+.wrapper_right {
+    display: flex;
+}
+
+ul#prf_nombres {
+    width: 25%;
+    border-right: solid 1px gray;
+    text-align: right;
+    list-style: none;
+    font-weight: 100;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+ul#prf_nivel {
+    width: 75%;
+    border-bottom: solid 1px gray;
+    list-style: none;
+    padding-left: 10px;
+}
+
+ul#prf_nombres li {
+    margin-bottom: 25px;
+    color: #909090;
+}
+ 
+ul#prf_nivel li {
+    width: 100%;
+    position: relative;
+    margin-bottom: 25px;
+    height: 25px;
+    overflow: hidden;
+}
+ul#prf_nivel li span {
+    position: absolute;
+    height: 10px;
+    background: #c90810;
+    bottom: 0;
+    width: 100%;
+}
+li#prf_empty {
+    height: 0px!important;
+}
+
+span.barraSwift {
+    right: 94%;
+}
+
+span.barrafreehand {
+    right: 7%;
+}
+
+span.barraCorel {
+    right: 20%;
+}
+
+span.barraEfects {
+    right: 92%;
+}
+
+span.barraIndesign {
+    right: 70%;
+}
+
+span.barraIlustrator {
+    right: 20%;
+}
+
+span.barraFotoshop {
+    right: 10%;
+}
+
+
+ul#anosPrf {
+    width: 80%;
+    padding-left: 20%;
+    display: flex;
+    list-style: none;
+    font-weight: 100;
+    padding-top: 0;
+    margin-top: 0;
+    color: gray;
+    text-align: center;
+}
+ul#anosPrf li{
+width: 16.5%;
+}
+
+@media all and (max-width:1000px){
+    .wrapperPrf{
+        flex-direction: column;
+        align-items: center;
+    }
+    .prf_right {
+        width: 100%;
+    }
+     
+}
+@media all and (max-width:700px){
+    ul#prf_nombres {
+        width: 25%;
+    text-align: center;
+    padding: 0;
+    font-size: 13px;
+    }
+    ul#prf_nivel {
+        width: 75%;
+    }
+    ul#prf_nivel li { 
+        margin-bottom: 20px;
+    }
+    ul#anosPrf {
+        font-size: 12px;
+    }
+    /* .prf_gris,.prf_grisSuave,.prf_red {
+        animation-name: undefined;
+    } */
+}

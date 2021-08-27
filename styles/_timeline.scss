@@ -1,0 +1,148 @@
+.innerTl.boxed {
+    display: flex;
+    flex-direction: column;
+    padding: 70px 0;
+}
+
+ul#trabajosArriba {
+    display: flex;
+    list-style: none;
+    border-bottom: solid 3px #585858;
+    padding: 0;
+    padding-bottom: 30px;
+}
+
+ul#trabajosArriba li{
+    position: relative;
+}
+
+ul#trabajosAbajo {display: flex; list-style: none; padding: 0;}
+
+ 
+
+ul#trabajosArriba li:nth-child(1) { 
+    width: 25%;
+}
+ul#trabajosArriba li:nth-child(2) {
+    text-align: center;
+    width: 50%;
+}
+ul#trabajosArriba li:nth-child(3) { 
+    width: 25%;
+}
+
+
+
+ul#trabajosAbajo li {
+    width: 45%;
+    position: relative;
+}
+ul#trabajosAbajo li:nth-child(2)  {
+    width: 20%;
+}
+ul#trabajosAbajo li:nth-child(1)  {
+    text-align: left;
+    width: 40%;
+}
+ul#trabajosAbajo li:nth-child(3)  {
+    text-align: right;
+    width: 40%;
+}
+
+
+
+
+ul#trabajosAbajo li:nth-child(1) .MarkerTl {
+    top: -43px;
+    left: 0;
+} 
+ul#trabajosAbajo li:nth-child(3) .MarkerTl {
+    top: -43px;
+    right: 0;
+}
+
+
+
+
+
+
+.innerTl h3 {
+    color: #c90810;
+    font-size: 1.5em;
+    font-weight: 100;
+    padding: 0;
+    margin: 0;
+}
+
+.innerTl span {
+    margin: 0;
+    padding: 0;
+    color: #909090;
+    font-weight: 100;
+    font-size: 1.3em;
+}
+
+.innerTl p {
+    margin: 0;
+    color: #fff;
+    font-weight: 100;
+    font-size: 1.1em;
+    line-height: 22px;
+}
+
+
+
+ul.MarkerTl {
+    margin: 0;
+    padding: 0;
+    width: 15px;
+    height: 15px;
+    border: solid 2px gray;
+    border-radius: 15px;
+    background: black;
+    position: absolute;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.MarkerTl li {
+    width: 10px!important;
+    height: 10px;
+    background: #6e0410;
+    border-radius: 5px;
+}
+
+ 
+ul#trabajosArriba li:nth-child(2) .MarkerTl{
+    left: 48%;
+    bottom: -40px;
+}
+
+@media all and (max-width:1000px){
+    ul#trabajosAbajo li:nth-child(2)  {
+        width: 0%;
+    }
+    ul#trabajosAbajo li:nth-child(1)  {
+        text-align: left;
+        width: 50%;
+        padding-right: 30px;
+    }
+    ul#trabajosAbajo li:nth-child(3)  {
+        text-align: right;
+        width: 50%;
+        padding-left: 30px;
+    }
+
+    ul#trabajosArriba li:nth-child(1) {
+        width: 5%;
+    }
+    ul#trabajosArriba li:nth-child(2) {
+        text-align: center;
+        width: 90%;
+    }
+    ul#trabajosArriba li:nth-child(3) {
+        width: 5%;
+    }
+}

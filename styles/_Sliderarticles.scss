@@ -1,0 +1,60 @@
+@import '_global.scss';
+
+.slid { 
+    &__Wrapper {
+        width: 98%;
+        overflow: hidden;
+        margin: 0 auto; 
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li{
+                list-style: none;
+                padding: 0 15px;
+
+                h2{
+                    border-left: solid 4px $base-color;
+                    line-height: 40px;
+                    padding: 0;
+                    padding-left: 10px;
+                    padding-bottom: 5px;
+                    background: $base_darkGray;
+                    
+                    }
+                
+                    span {
+                        font-weight: 600;
+                        color: $base-color;
+                      }
+
+                      p{
+                        color: $boddy_dolor;
+                        overflow: auto;
+                        max-height: 340px;
+                        min-height: 360px;
+                     }
+              }
+          }
+      }
+      .wrapper_brn_sld {
+        position: absolute;
+        bottom: 5px;
+        width: 97%;
+        display: flex;
+        justify-content: space-between;
+
+        button{
+            width: 45%;
+              border: solid 1px #ff000040;
+            background: linear-gradient( transparent 0%, #ff000017 45%, #ff0000a3 100%);
+            color: #fff;
+            line-height: 40px;
+            font-weight: 600;
+            letter-spacing: 3px;
+          }
+      }
+      
+  }
+ 

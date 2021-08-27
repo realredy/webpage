@@ -20,10 +20,7 @@ let Innerdata = () => {
            body: JSON.stringify( fillvalues )
        }); 
        const issaved = await senddata.json();
-
-     
-     console.log('issaved ::: ',issaved)
-
+ 
  }
 
 

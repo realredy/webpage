@@ -1,0 +1,130 @@
+#workSelector {
+    display: flex;
+    justify-content: center;
+  }
+  #workSelector > ul{
+    margin: 50px 0;
+    padding: 0;  
+    display:flex;
+  }
+  #workSelector > ul > li{
+    list-style: none;
+  }
+  #workSelector > ul > li a{
+    color: #c90810;
+    text-decoration: none;
+    padding: 0 20px;
+    border:solid 1px #c90810;
+    transition: all 0.4s;
+  }
+  #workSelector > ul > li:first-child a{
+    border-top-left-radius: 13px;
+    border-bottom-left-radius: 13px;
+  }
+  #workSelector > ul > li:last-child a{
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+  }
+  .wrapperWeb{
+      display: flex;
+  }
+  .wrapperWeb img {
+    width: 50%;
+    max-width: 600px;
+    min-width: 550px;
+    height: 400px;
+}
+  .wrapperWeb section{
+    width: 50%;
+}
+
+section#innerTextWeb {
+  padding: 50px 30px;
+  font-weight: 100;
+}
+section#innerTextWeb ul{
+  padding: 0;
+  }
+section#innerTextWeb li{
+  list-style: none;
+}
+.SelectedPortfolio {
+  background: #c90810;
+  color: black!important;
+}
+
+div#wrapperVideo {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.boxShow {
+    overflow: hidden;
+    position: relative;
+}
+.boxShow ul{
+    padding:0;
+}
+.boxShow ul li{
+    list-style: none;
+}
+.wrapperButtonWorks {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.wrapperButtonWorks button{
+    width: 15%;
+      border: solid 1px #ff000040;
+    background: linear-gradient( transparent 0%, #ff000017 45%, #ff0000a3 100%);
+    color: #fff;
+    line-height: 40px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    cursor: pointer;
+  }
+  .wrapper_videowork {
+    width: 470px;
+    display: flex;
+    justify-content: center;
+    background: radial-gradient(red 0%, transparent 60%);
+}
+@media all and (max-width:1000px){
+  .wrapperWeb{
+    flex-direction: column;
+  }
+  .wrapperWeb > img{
+    width: 100%;
+    margin: 0 auto;
+  }
+  .wrapperWeb > #innerTextWeb{
+    width: 90%;
+  }
+  .wrapperWeb p{
+    text-align: justify;
+  }
+}
+
+@media all and (max-width:550px){
+  .boxShow > .carousel{
+    padding:0;
+  }
+  .wrapperWeb img{
+    width: 100%; 
+    max-width: unset;
+    min-width: unset;
+    height: unset;
+}
+.wrapperWeb > #innerTextWeb {
+  width: 100%;
+  padding: unset;
+}
+.wrapperWeb > #innerTextWeb ul{ 
+  padding: 10px;
+}
+div#wrapperVideo {
+  width: 100%; 
+}
+}

@@ -1,0 +1,173 @@
+div#web_producer {
+    padding: 60px 0;
+}
+
+.innerWebProducer {
+    display: flex;
+}
+
+div#levelWebP {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+div#niveles_webP {
+    width: 65%;
+}
+
+ul#wepb_mysql {
+    list-style: none;
+    height: 350px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+    color: #909090;
+    width: 20%;
+    font-weight: 100;
+}
+
+ul#wepb_mysql li#mysql_increment {
+    height: 80%;
+    background: #c90810;
+}
+
+ul#wepb_firebase {
+    list-style: none;
+    height: 350px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+    font-weight: 100;
+    color: #909090;
+    width: 20%;
+}
+
+ul#wepb_firebase li#firebase_increment {
+    height: 70%;
+    background: #585858;
+}
+ul#Barras_webP {
+    list-style: none;
+    font-weight: 100;
+    color: #909090;
+}
+
+
+ul#Barras_webP {
+    list-style: none;
+    font-weight: 100;
+    color: #909090;
+}
+
+ul#Barras_webP li { 
+    height: 40px;
+    margin-bottom: 10px; 
+    position: relative;
+}
+
+ul#Barras_webP li span {
+    margin-top: 5px;
+    display: inline-block; 
+}
+
+ul#Barras_webP li::before {content: "";height: 5px; background: #c90810;position: absolute;bottom: 0;left: 0;z-index: 3;}
+
+ul#Barras_webP li::after {content: "";width: 100%;position: absolute;bottom: 0;right: 0;background: #585858;height: 5px;z-index: 2;}
+
+/*---------------MOVIMENTO DE LAS BARRAS INDEPENDIENTES-----------------------*/
+
+li.containerJavalevel::before {
+    width: 80%;
+}
+
+span.webJavaPorcent {
+    left: 80%;
+    position: absolute;
+}
+
+
+li.containerPhpLevel::before {
+    width: 75%;
+}
+
+span.webPhpPorcent {
+    left: 75%;
+    position: absolute;
+}
+
+
+li.containerReact::before {
+    width: 60%;
+}
+
+span.webReatPorcent {
+    left: 60%;
+    position: absolute;
+}
+
+li.containerHtmlCss::before {
+    width: 90%;
+}
+
+span.webHtmlPorcent {
+    left: 90%;
+    position: absolute;
+}
+
+
+li.containerIonic::before {
+    width: 30%;
+}
+
+span.webIonicPorcent {
+    left: 30%;
+    position: absolute;
+}
+
+
+li.containerWP::before {
+    width: 90%;
+}
+
+span.webWPPorcent {
+    left: 90%;
+    position: absolute;
+}
+
+
+li.containerShopify::before {
+    width: 75%;
+}
+
+span.webShopifyPorcent {
+    left: 75%;
+    position: absolute;
+}
+
+@media all and (max-width:1000px){
+    .innerWebProducer { 
+        flex-direction: column;
+        align-items: center;
+    }
+    div#levelWebP {
+        width: 70%;
+    }
+    div#niveles_webP {
+        width: 100%;
+    }
+}
+@media all and (max-width:700px){
+    ul#wepb_mysql,  ul#wepb_firebase  { 
+        width: 35%;
+    } 
+    ul#Barras_webP { 
+        padding: 0;
+    }
+   
+}

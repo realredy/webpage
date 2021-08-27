@@ -5,9 +5,7 @@ import Head from 'next/head'
  let blockScroll = ()=>{
     window.onscroll = ()=>{
          var y = window.scrollY
-         console.log(y)
-        
- 
+          
     }
 
    

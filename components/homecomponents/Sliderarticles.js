@@ -1,20 +1,26 @@
-import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel';
+import { CarouselProvider, 
+         Slider, 
+         Slide,   
+         ButtonBack,
+         ButtonNext } from 'pure-react-carousel';
 
-let Sliderarticles = ({sliders})=>{
- 
+let Sliderarticles = ({data})=>{
+  
  return(
-<CarouselProvider
+   <div className="slid">
+   <section className="slid__Wrapper">
+     <CarouselProvider
         naturalSlideWidth={100}
-        naturalSlideHeight={175}
+        naturalSlideHeight={155}
         totalSlides={7}
         infinite={true}
         isIntrinsicHeight={true}
       > 
       <Slider>
        {
-          sliders.map((output)=>{ 
+          data.map((output)=>{ 
             return(
-             <Slide index={output.id}>
+             <Slide key={output.id} index={output.id}>
               <div className="wrapperSld">
                 <h2>{output.title}</h2>
                 <span>{output.subtitle}</span>
@@ -26,9 +32,14 @@ let Sliderarticles = ({sliders})=>{
        }
           
        </Slider>
-       <DotGroup />
+       <div className="wrapper_brn_sld">
+        <ButtonBack>Back</ButtonBack>
+        <ButtonNext>Next</ButtonNext>
+        </div>
      </CarouselProvider>
+     </section>
+     </div>
 )
 }
 
-export default Sliderarticles
+export default Sliderarticles 

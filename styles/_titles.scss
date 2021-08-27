@@ -1,0 +1,19 @@
+@import '_global.scss';
+
+.redLine{
+   
+    position: relative;
+    border-bottom: solid 10px $base-color;
+    height: 50px;
+    margin-top: 40px; 
+    margin-bottom: 30px;
+     &__texto{
+         display: block;
+         background: black;
+         padding: 0 50px;
+         position: absolute;
+         bottom: -28px;
+         line-height: 50px;
+         color: $boddy_dolor;
+     }
+}

@@ -8,8 +8,8 @@ let Handler = (req, res) => {
         var stringType = fulldata.sliders.filter((arri)=> arri.type === typeoff.type  )
         stringType.length > 0 ?  res.status(200).json(stringType) :    res.status(400).json({error:'Not Found!'}) 
          break;
-    case 'experiencias':
-        var stringType = fulldata.experiencias.filter((arri)=> arri.nombre === typeoff.type  )
+    case 'works':
+        var stringType = fulldata.works.filter((arri)=> arri.type === typeoff.type  )
         stringType.length > 0 ?  res.status(200).json(stringType) :    res.status(400).json({error:'Not Found!'}) 
          
     break;

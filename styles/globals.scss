@@ -2,6 +2,14 @@
 @import '_global.scss';
 @import '_home.scss';
 @import '_Selectorarticles.scss';
+@import '_Sliderarticles.scss';
+@import '_titles.scss';
+@import '_printsoftware.scss';
+@import '_webproducer.scss';
+@import '_timeline.scss';
+@import '_timelinemobile.scss';
+@import '_portfolios.scss';
+@import '_about.scss';
 
 html,body {
   padding: 0;
@@ -21,6 +29,4 @@ a {
 * {
   box-sizing: border-box;
 }
-.home{
 
-}
