@@ -18,9 +18,20 @@ let Header = () =>{
     return (
         <>
         <Head>
-        <title>Por defecto</title>
+        <title>Ricardo lavour website</title>
         <meta name="description" content="la manera de cambiar el estado" />
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:type" content="website" />
+         <meta property="og:title" content="Ricardo E. Lavour" />
+         <meta property="og:description" content="A place for put my portfolios, works, and write about technology topics" />
+         <meta property="og:url" content="https://lavour.es" /> 
+         <meta property="og:image" content="./logo.png" />
+
+         <meta name="twitter:card" content="sumary" />
+         <meta name="twitter:title" content="Ricardo E. Lavour" />
+         <meta name="twitter:description" content="A place for put my portfolios, works, and write about technology topics" />
+         <meta name="twitter:image" content="./logo.png" />
+         <meta name="twitter:url" content="https://lavour.es" />
       </Head>
         <header className="header">
              <div className="header__wrapper"> 
@@ -36,7 +47,7 @@ let Header = () =>{
                        <Link href="/getdata">
                          <li>
                          <a>
-                               blog
+                              getdata
                         </a>
                         </li>
                    </Link>
@@ -50,10 +61,10 @@ let Header = () =>{
                         </li>
                    </Link>
 
-                   <Link href="/datafire">
+                   <Link href="/blog">
                          <li>
                          <a>
-                            Contacto
+                            blog
                         </a>
                         </li>
                    </Link>

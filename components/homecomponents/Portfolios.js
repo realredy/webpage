@@ -67,7 +67,7 @@ function Portfolios({dataw}) {
 
                              { works.img !== '/mobileApp.mp4' ? 
                               <Image src={works.img} alt={works.alt} width={550} height={400} /> : 
-                                <div className="wrapper_videowork"> <video controls="true"  width="210px">
+                                <div className="wrapper_videowork"> <video controls={true}  width="210px">
                                   <source src={works.img} type="video/mp4" />
                                   Your browser does not support HTML video.</video></div> }  
                            

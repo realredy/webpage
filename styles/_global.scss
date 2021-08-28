@@ -4,6 +4,8 @@ $base_darkGray: #242424;
 $base-color: #cb080f;
 $light_gray: rgb(151, 151, 151);  
 $boddy_dolor: #bfbfbf;
+$base_linegray:#4b4b4b;
+$color_parrafo: #909090;
 
 
 //paddings
@@ -24,7 +26,10 @@ $br-peque:  5px;
 $br-mediano:  8px;
 $br-grande:  10px;
 
-$transform4:all 0.4s;
+$size_titulo: 22px;
+$size_subtitulo: 18px;
+$size_parrafo: 16px;
+
 
 @mixin box-general_flex { 
     list-style: none;
@@ -35,6 +40,16 @@ $transform4:all 0.4s;
     width: 80%;
     max-width: $screen-normal;
   }
+
+  @mixin single-title {
+    background: $base_darkGray;
+    font-size: 22px;
+    display: block;
+    line-height: 25px;
+    padding: 15px $p-pequeno 15px 40px;
+    border-left: solid 5px $base-color;
+  }
+
   @mixin box-width {
     width: 80%;
     max-width: $screen-normal;

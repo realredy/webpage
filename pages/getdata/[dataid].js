@@ -2,7 +2,19 @@ let Onlydata = ({mydata})=>{
  // obtenemos la variable creada por el fetch
     return(
             <>
-             <p>{mydata.email}</p>
+              <br />
+               <br />
+                <br />
+
+                 <br />
+                  <br />
+                   <br />
+                    <br />
+                     <br />
+                      <br />
+                       <br />
+                        <br />
+             <p style={{color:'white'}}>{mydata.email}</p>
              <p>{mydata.name}</p>
              <hr />
              
@@ -22,13 +34,17 @@ export async function getStaticPaths() {
 
   const allrest = await fetch('https://jsonplaceholder.typicode.com/users')
   const predata = await allrest.json() 
-  predata.map(data=>{
+
+  let allpaths = predata.map((data,r)=>{
+  
     return{
-      paths:{
-        params:{dataid: data.id }
-      }
+      // data.id transfiere un numero pero debe ser convertido a string
+        params:{dataid: data.id.toString() }
+      
     } 
+   // map 
   })
+  
 
     return {
       // paths: [
@@ -44,7 +60,7 @@ export async function getStaticPaths() {
       datos en caso de no estar registrados unos de estos paramentros
       en la lista 
      */
-       paths:[allrest],
+       paths:allpaths,
       fallback: true
     }
   }
@@ -59,7 +75,9 @@ export async function getStaticProps(context) {
      la url para poder ser inyecta en la peticion de 
      los datos aca debajo
     */
+    
     const data = context.params.dataid; 
+      
     /**
      esta constante estaria generando el siguiente array
     params:{

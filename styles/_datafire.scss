@@ -1,0 +1,64 @@
+@import '_global.scss';
+.bodyblog{
+ @include box-width;
+ @include flex-row-betwen-center;
+ align-items: initial;
+ section{
+     margin-bottom: 80px;
+ }
+  &__body{
+     width: 80%; 
+     &-wrapper{
+         margin: $p-mediano; 
+         &-link-box{
+             position: relative;
+             img{
+                 width: 100%;
+             }
+             &-date{
+                 position: absolute;
+                 top: 20px;
+                 padding: $p-pequeno;
+                 background: $base_linegray;
+                 border-top-right-radius: $br-mediano;
+                 border-bottom-right-radius: $br-mediano;
+                 box-shadow: -8px 4px 10px #1f1f1f;
+                 img{
+                     width: 18px;  
+                 }
+                 span{
+                     margin-left: 10px;
+                 }
+             }
+         }
+         &-link-title{ 
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             overflow: unset;
+             position: relative;
+             h3{
+                 position: absolute;
+                 display: block;
+                 width: 90%;
+                 background: $base_linegray;
+                 margin: 0;
+                 margin-top: -40px;
+                 padding: $p-pequeno $p-mediano;
+                 border-radius: $br-peque;
+                }
+         }
+     }
+ }
+ &__sidebar{
+    width: 20%; 
+    &-wrapper{
+        margin: $p-mediano;
+        border:solid 1px $base_linegray;
+        min-height: 100px;
+    }
+ }
+   
+    
+}
