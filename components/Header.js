@@ -43,24 +43,7 @@ let Header = () =>{
                  </div>
                  
                   <div className="header__wrapper-right-menu">  
-                       <ul>
-                       <Link href="/getdata" passHref>
-                         <li>
-                         <a>
-                              getdata
-                        </a>
-                        </li>
-                   </Link>
-                 
-
-                   <Link href="/fechdata" passHref>
-                         <li>
-                         <a>
-                               about me
-                        </a>
-                        </li>
-                   </Link>
-
+                       <ul> 
                    <Link href="/blog" passHref>
                          <li>
                          <a>
