@@ -1,4 +1,4 @@
-import Spacer from '../components/spacer' 
+ import Spacer from '../components/spacer';
 import Sliderarticles from '../components/homecomponents/Sliderarticles';
 import Selectorarticles from '../components/homecomponents/Selectorarticles';
 import { useEffect , useState} from 'react';
@@ -11,7 +11,10 @@ import Portfolios from '../components/homecomponents/Portfolios';
 import About from '../components/homecomponents/About';
 
 
-export default function Home({sliders, works}) {
+export default function Home() { 
+  
+   
+
   const [pantalla, setPantalla] = useState('');   
   let resize = ()=>{
     if(document !== 'undefined'){
@@ -20,6 +23,10 @@ export default function Home({sliders, works}) {
        } 
     } 
  };
+
+
+ 
+
 
   useEffect(()=>{ 
       setPantalla(window.innerWidth);  
@@ -37,7 +44,7 @@ export default function Home({sliders, works}) {
     <>
     <Spacer />
     <div className="home"> 
-      { pantalla >= 550 ? <Selectorarticles />  : <Sliderarticles data={sliders}/> }  
+      { pantalla >= 550 ? <Selectorarticles />  : <Sliderarticles /> }  
       <Titles texto="Pints Software" posicion="left" />
       <Printsoftware />
       <Titles texto="Web Developer" posicion="right" />
@@ -45,7 +52,7 @@ export default function Home({sliders, works}) {
       <Titles texto="Work TimeLine" posicion="left" />
       { pantalla >= 550 ? <Timeline /> : <TimelineMobile /> }
       <Titles texto="Some Works" posicion="right" />
-      <Portfolios dataw={works} />
+      <Portfolios />
       <Titles texto="Litle info about me" posicion="left" />
       <About />
     </div>
@@ -55,18 +62,21 @@ export default function Home({sliders, works}) {
 
 } 
 
-export async function getStaticProps() {   
-  let fetchs = await fetch('http://localhost:3000/api/type/sliders');
-  let getdata = await fetchs.json(); 
-  //================================================
-  let fetchsw = await fetch('http://localhost:3000/api/type/works');
-  let miworks = await fetchsw.json(); 
 
-  // console.log('sin parameters::',works)
-   return {
-     props: {
-      sliders: getdata,
-      works: miworks
-     },
-   }
-}
+
+
+// export async function getStaticProps() {   
+//   let fetchs = await fetch('http://localhost:3000/api/type/sliders');
+//   let getdata = await fetchs.json(); 
+//   //================================================
+//   let fetchsw = await fetch('http://localhost:3000/api/type/works');
+//   let miworks = await fetchsw.json(); 
+
+//   // console.log('sin parameters::',works)
+//    return {
+//      props: {
+//       sliders: getdata,
+//       works: miworks
+//      },
+//    }
+// }

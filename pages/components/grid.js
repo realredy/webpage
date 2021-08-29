@@ -1,7 +1,7 @@
 function Grid({props}){
 return(
     <>
-    <span>{props.address.city}</span>
+     
       <pre>{props.email}</pre>
     </>
 )

@@ -7,6 +7,8 @@ import Head from 'next/head';
 import Spacer from '../../components/spacer';
 import Link from 'next/link';
 
+import { useRouter } from 'next/dist/client/router';
+
 var out_title;
 var out_desc;
 var out_date;
@@ -16,7 +18,14 @@ let shareFunct = (e) =>{
 console.log(e)
 }
 function Single({datasingle}){
-       
+
+  const router = useRouter();
+    //  console.log('datasingle', JSON.parse(datasingle))  
+
+     if(router.isFallback){
+       return <pre>Cargando, espera...</pre>
+     }
+
     return(
         <> 
         <Spacer />
@@ -39,7 +48,7 @@ function Single({datasingle}){
         </Head>
          <div className="single">
            {
-             JSON.parse(datasingle).map((single)=>{
+             JSON.parse(datasingle).map((single, i)=>{
                  let date = Date(single.date.toString()) 
                  let htm = parse(single.text);
                  out_desc = single.text;
@@ -47,9 +56,9 @@ function Single({datasingle}){
                   out_date = date.slice(4,16);
                   out_img = single.img.split(',')[0];
                return(
-                 <div className="single__wrapper">
+                 <div key={i} className="single__wrapper">
                 <div className="single__wrapper-image-date">
-                  <img src={single.img.split(',')[0]} alt={single.img.split(',')[1]} />
+                  <img src={single.img.split(',')[0]} alt={single.img.split(',')[1]} width={800} height={325} quality={100} />
                   <span>{date.slice(4,16)}</span>
                 </div> 
                   <h1>{single.title}</h1>
@@ -81,16 +90,13 @@ export async function getStaticPaths() {
             
  let prams = datafire.map(data=>{
           
-    return{  params:{ id: data.data().title} } 
- 
-
+    return{  params:{ id: data.data().title} }  
   }) 
 
    return{
        paths: prams ,
-      fallback: true
-   }
-
+      fallback: 'blocking'
+   } 
 }
 
  
@@ -103,9 +109,11 @@ let confirm = dataParams.split("-").join(" ");
      let data = await firebase.firestore(db).collection('blog-cogigos').where("title", "==", confirm).get(); 
          let tata = data.docs; 
         let pre = tata.map((fix)=>{ 
-         
-          return fix.data();  
+        
+          return fix.data();   
          }) 
+
+        //  console.log('rep',pre)
       return {
         props: {
           datasingle: JSON.stringify(pre),

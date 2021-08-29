@@ -68,7 +68,7 @@ function About() {
 
                                  <div className="BottomCenter">
                                   
-                                       <img src="/3Dlogo.png" alt="ricardo lavour ring" width="254" height="250" /> 
+                                       <Image src="/3Dlogo.png" alt="ricardo lavour ring" width="254" height="250" /> 
                                              
                                  </div>
 

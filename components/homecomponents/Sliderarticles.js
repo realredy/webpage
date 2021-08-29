@@ -1,11 +1,16 @@
+import {fulldata} from '../../aplicJson/index';
+
 import { CarouselProvider, 
          Slider, 
          Slide,   
          ButtonBack,
          ButtonNext } from 'pure-react-carousel';
 
-let Sliderarticles = ({data})=>{
+let Sliderarticles = ()=>{
   
+//  return console.log('=======================================',fulldata)
+
+
  return(
    <div className="slid">
    <section className="slid__Wrapper">
@@ -18,7 +23,7 @@ let Sliderarticles = ({data})=>{
       > 
       <Slider>
        {
-          data.map((output)=>{ 
+          fulldata.sliders.map((output)=>{ 
             return(
              <Slide key={output.id} index={output.id}>
               <div className="wrapperSld">

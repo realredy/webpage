@@ -1,3 +1,5 @@
+import {fulldata} from '../../aplicJson/index';
+
 import Image from 'next/image'; 
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 
@@ -27,7 +29,7 @@ import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-re
 // });
 // // }
 
-function Portfolios({dataw}) {
+function Portfolios() {
    
 
 
@@ -52,7 +54,7 @@ function Portfolios({dataw}) {
         isIntrinsicHeight={true}
       >
             <Slider>
-                {dataw.map((works)=>{
+                {fulldata.works.map((works)=>{
 
 
 

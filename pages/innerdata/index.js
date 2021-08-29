@@ -24,10 +24,14 @@ let Innerdata = () => {
  }
 
 
- useEffect(  async () => {
-     let predata = await fetch('/api/datafechapi'); 
-     let preapi = await predata.json(); 
-     setInnerrest(preapi)
+ useEffect(   () => {
+    async function fechi(){
+        let predata = await fetch('/api/datafechapi'); 
+        let preapi = await predata.json(); 
+        setInnerrest(preapi)
+     }
+     fechi()
+     
  }, [])
     return (
          <>

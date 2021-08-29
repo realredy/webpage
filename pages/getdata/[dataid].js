@@ -14,7 +14,7 @@ let Onlydata = ({mydata})=>{
                       <br />
                        <br />
                         <br />
-             <p style={{color:'white'}}>{mydata.email}</p>
+             <p style={{color:'white'}}>{mydata.email ? mydata.email : ''}</p>
              <p>{mydata.name}</p>
              <hr />
              

@@ -44,7 +44,7 @@ let Header = () =>{
                  
                   <div className="header__wrapper-right-menu">  
                        <ul>
-                       <Link href="/getdata">
+                       <Link href="/getdata" passHref>
                          <li>
                          <a>
                               getdata
@@ -53,7 +53,7 @@ let Header = () =>{
                    </Link>
                  
 
-                   <Link href="/fechdata">
+                   <Link href="/fechdata" passHref>
                          <li>
                          <a>
                                about me
@@ -61,7 +61,7 @@ let Header = () =>{
                         </li>
                    </Link>
 
-                   <Link href="/blog">
+                   <Link href="/blog" passHref>
                          <li>
                          <a>
                             blog
@@ -78,17 +78,17 @@ let Header = () =>{
                              <section className="header__bigpanel">
               <div className="bigpanel_wrapper">
                   <ul className="bigpanel_wrapper__menuLeft">
-                      <li><a href="">Javascript</a></li>
-                      <li><a href="">Base de datos</a></li>
-                      <li><a href="">php</a></li>
-                      <li><a href="">Maquetación</a></li>
-                      <li><a href="">Gitlab</a></li>
-                      <li><a href="">WebPack</a></li>
+                      <li><a>Javascript</a></li>
+                      <li><a>Base de datos</a></li>
+                      <li><a>php</a></li>
+                      <li><a>Maquetación</a></li>
+                      <li><a>Gitlab</a></li>
+                      <li><a>WebPack</a></li>
                   </ul>
                   <ul className="bigpanel_wrapper__menuRight">
-                      <li><a href="">Diseño Gráfico</a></li>
-                      <li><a href="">Producción</a></li>
-                      <li><a href="">Diagramación</a></li> 
+                      <li><a>Diseño Gráfico</a></li>
+                      <li><a>Producción</a></li>
+                      <li><a>Diagramación</a></li> 
                   </ul>
               </div>
             </section>

@@ -30,7 +30,7 @@ return (
           return(
             <section key={i}>
               <div className="bodyblog__body-wrapper-link-box">
-                <img src={doc.img.split(',')[0]} alt={doc.img.split(',')[1]} /> 
+                <img src={doc.img.split(',')[0]} alt={doc.img.split(',')[1]} width={800} height={325}  /> 
                 <div className="bodyblog__body-wrapper-link-box-date">
                   <Image src="/calendar.svg" alt="ricardo lavour calendar icon" width={40} height={40} />
                   <span>{date.slice(4,10)}</span>

@@ -33,6 +33,9 @@ let Newdata = ({mydata})=>{
     )
 }
 
+
+
+
 export async function getStaticProps() {
    
     const res = await fetch('https://jsonplaceholder.typicode.com/users')
