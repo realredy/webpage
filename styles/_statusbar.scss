@@ -1,0 +1,20 @@
+@import '_global.scss';
+
+.StatusBar{
+    background: $background_body;
+    position: absolute;
+    width: 100%;
+    &_wrapper{
+        ul{
+            @include no-ul;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            li{
+                line-height: 40px;
+                margin-right: 20px;
+    cursor: pointer;
+            }
+        }
+    } 
+}
