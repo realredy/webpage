@@ -71,3 +71,19 @@ $size_parrafo: 16px;
     align-items: center;
 
   }
+  @mixin body-inner-article {
+    display: block;
+    box-sizing: border-box;
+    padding:$p-grande;
+    color: $base_darkGray;
+  }
+
+  @mixin input-select-border {
+    border:solid 1px rgb(218, 211, 211);
+  }
+  @mixin input-rules {
+   height: 35px;
+   font-size: $size_parrafo;
+   padding-left: $p-pequeno;
+   margin-bottom: $p-pequeno;
+  }

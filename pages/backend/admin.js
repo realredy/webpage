@@ -3,7 +3,8 @@ import {db} from '../../firebase/firebase';
 import 'firebase/auth'; 
 import React,{useEffect, useState} from 'react';
 import StatusBar from '../../components/Statusbar';
-// import All from '../allArticles/All';
+import SetNewArticle from '../../components/articles/setnewarticle';
+import Allarticles from '../../components/articles/allarticles';
 // import Media from '../media/Media'
 // import {is_loged} from '../login/loged';
 // import './homeadmin.css';  
@@ -11,23 +12,23 @@ import StatusBar from '../../components/Statusbar';
  
 const Admin = () => { 
 
-// const [menuk, setmenuk] = useState(<All />)
-//     let menu_select = (menutype)=>{  
-//       switch (menutype.target.id) {
-//         case 'all':
-//           setmenuk( <All />);
-//           break;
-//           case 'media':
-//           setmenuk( <Media />);
-//           break;
-//           case 'new':
-//             setmenuk(<p>No menu</p>);
-//             break; 
-//             default:
+const [adminbody, setAdminbody] = useState(<Allarticles />)
+    let menu_select = (menutype)=>{  
+      switch (menutype.target.id) {
+        case 'new':
+            setAdminbody( <SetNewArticle />);
+          break;
+        //   case 'media':
+        //   setmenuk( <Media />);
+        //   break;
+        //   case 'new':
+        //     setmenuk(<p>No menu</p>);
+        //     break; 
+        //     default:
              
-//               break;
-//       }  
-//     }
+        //       break;
+      }  
+    }
   useEffect(()=>{ 
     // firebase.auth(db).onAuthStateChanged( auth => { 
     //     if( auth === null){ 
@@ -52,10 +53,12 @@ const Admin = () => {
                 Articulos
                 <ul>
                     {/* <li id="new" onClick={menu_select} >anadir nuevo</li> */}
+                    <li id="new" onClick={menu_select}>Nuevo Articulo</li>
                     <li>nueva categoria</li>
                     </ul>
                 {/* </li> */}
                 {/* <li id="media" onClick={menu_select} >Multimedia</li> */}
+                
             <li>Maquetacion</li>
             <li>JavaScript</li>
             <li>PhP&MySQL</li>
@@ -65,7 +68,7 @@ const Admin = () => {
         </section>
         <section className="BackendBody__wrapper-body">
             <div className="BackendBody__wrapper-inner">
-                {/* {menuk} */}
+                {adminbody}
             </div>  
             </section>
         </div>
