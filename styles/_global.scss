@@ -49,6 +49,11 @@ $size_parrafo: 16px;
     padding: 15px $p-pequeno 15px 40px;
     border-left: solid 5px $base-color;
   }
+  @mixin no-ul {
+    margin:0;
+    padding:0;
+    list-style: none;
+  }
 
   @mixin box-width {
     width: 80%;
@@ -65,4 +70,20 @@ $size_parrafo: 16px;
     justify-content: space-between;
     align-items: center;
 
+  }
+  @mixin body-inner-article {
+    display: block;
+    box-sizing: border-box;
+    padding:$p-grande;
+    color: $base_darkGray;
+  }
+
+  @mixin input-select-border {
+    border:solid 1px rgb(218, 211, 211);
+  }
+  @mixin input-rules {
+   height: 35px;
+   font-size: $size_parrafo;
+   padding-left: $p-pequeno;
+   margin-bottom: $p-pequeno;
   }

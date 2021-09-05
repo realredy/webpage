@@ -1,0 +1,4 @@
+@import '_global.scss';
+.allarticles{
+    @include body-inner-article;
+}

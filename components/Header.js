@@ -2,13 +2,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head' 
 
+
+  
+
  let blockScroll = ()=>{
     window.onscroll = ()=>{
-         var y = window.scrollY
-          
-    }
-
-   
+         var y = window.scrollY 
+    } 
  }
 
 
@@ -48,6 +48,13 @@ let Header = () =>{
                          <li>
                          <a>
                             blog
+                        </a>
+                        </li>
+                   </Link>
+                   <Link href="/backend" passHref>
+                         <li>
+                         <a>
+                         backend
                         </a>
                         </li>
                    </Link>

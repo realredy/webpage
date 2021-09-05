@@ -1,0 +1,121 @@
+@import '_global.scss'; 
+ .SetNewArticle{
+    @include body-inner-article;
+    &__wrapper-title{
+        background: $boddy_dolor;
+        border-radius: $br-peque;
+        margin-bottom: 15px;
+        span{
+            line-height: 40px;
+            padding-left: $p-mediano;
+            font-size: $size_subtitulo;
+        }
+    }// wrappr title
+    &__body{
+        &-wrapper{
+            &-form{
+              @include box-general_flex;
+              align-items: flex-start;
+              width: 100%;
+              &-main{
+                  width: 80%;
+                  display: flex;
+                  flex-direction: column;
+                  padding:$p-mediano;
+                  box-sizing: border-box;
+                  input,select,textarea{
+                      @include input-select-border;
+                  }
+                  input{
+                    @include input-rules;
+                  }
+              }
+                &-aside{
+                    width: 20%;
+                    &-selectIMG{
+                        width: 100%;
+                        margin-top: 40px;
+                        background: white;
+                        @include input-select-border;
+                        span{
+                            padding-left: 10px;
+                            line-height: 35px;
+                            border-bottom:solid 1px rgb(218, 211, 211);
+                            display: block;
+                        }
+                        button{
+                            background: gray;
+                            display: block;
+                            width: 95%;
+                            margin: 5px auto 10px;
+                            color: white;
+                            line-height: 30px;
+                            border-radius: 5px;
+                            text-align: center;
+                            border:none;
+                            &:hover{
+                                background: rgb(94, 94, 94);
+                                cursor: pointer;
+                            }
+                          }
+                        &-preview{
+                            height: 80px;
+                            background: #f7f6ed;
+                            width: 95%;
+                            margin:5px auto;
+                            &-input{
+                                display: none;
+                            }
+                        }
+                    }
+                    &-selectCategory{
+                        width: 100%;
+                        margin-top: 20px;
+                        background: white;
+                        @include input-select-border;
+                        span{
+                            padding-left: 10px;
+                            line-height: 35px;
+                            border-bottom:solid 1px rgb(218, 211, 211);
+                            display: block;
+                        }
+                        select{
+                            @include input-rules;
+                            display: block;
+                            width: 95%;
+                            margin:10px auto;
+                            @include input-select-border;
+                          }
+                    }
+                }
+
+                &-keyworl{
+                    height: 25px;
+                    background: #f7f6ed;
+                    margin:5px 0;
+                    border-radius: $br-grande;
+                }
+
+                &-SendResset{
+                    input:first-child{
+                       width: 150px;
+                       background: rgb(241, 203, 152);
+                       border:none;
+                       border-radius: $br-peque;
+                       cursor: pointer;
+                     }
+                     input:last-child{
+                        width: 250px;
+                        background: rgb(120, 183, 255);
+                        border:none;
+                        border-radius: $br-peque;
+                        cursor: pointer;
+                      }
+                }
+            }
+
+        }
+        
+    }
+}
+ 
