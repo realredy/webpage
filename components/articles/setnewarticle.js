@@ -1,6 +1,18 @@
+ import React, { useRef } from 'react';
+ import dynamic from "next/dynamic";
+ import 'suneditor/dist/css/suneditor.min.css'; 
+
+ const SunEditor = dynamic(() => import("suneditor-react"), {
+    ssr: false,
+  });
 export default function SetNewArticle(){
 
 
+   function handleChange(content){
+        console.log('Sun editor::::;',content); //Get Content Inside Editor
+    }
+ 
+  // documentacion sun editor::https://github.com/mkhstar/suneditor-react
     return(
         <>
         <div className="SetNewArticle">
@@ -15,8 +27,16 @@ export default function SetNewArticle(){
                              <input type="text" name="title" id="label-title" />
                              <label htmlFor="label-url">Insert fryendly url</label>
                              <input type="text" name="url" id="label-url" />
-                            {/* for change textarea */}
-                             <textarea name="" id="" cols="30" rows="10"></textarea>
+                            {/* for change textarea */} 
+                            
+                             
+                            <SunEditor onChange={handleChange} setOptions={{
+                                 height:200,
+                                 buttonList: [['undo', 'redo'],['font','fontSize', 'align','list'], 
+                                              ['image'],['bold', 'underline','hiliteColor','fontColor'],
+                                            ['table', 'link','formatBlock']]
+                            }}/>
+                            
                             <div className="SetNewArticle__body-wrapper-form-keyworl">
 
                             </div>
