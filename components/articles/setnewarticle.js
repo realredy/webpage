@@ -49,8 +49,7 @@ export default function SetNewArticle(){
                         </div>
                     </form>
                 </div>
-            </div>
-            
+            </div> 
         </div>
         
         </>
