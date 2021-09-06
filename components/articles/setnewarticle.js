@@ -1,13 +1,18 @@
  import React, { useRef } from 'react';
  import dynamic from "next/dynamic";
  import 'suneditor/dist/css/suneditor.min.css'; 
+ import firebase from 'firebase'; 
+import {db} from '../../firebase/firebase';
+import 'firebase/firestore';
 
  const SunEditor = dynamic(() => import("suneditor-react"), {
     ssr: false,
   });
-export default function SetNewArticle(){
-
-
+ function SetNewArticle({categories}){
+     const categoriesToJson = JSON.parse(categories)
+     const categoiesToArray = Object.values(categoriesToJson) 
+        
+            
    function handleChange(content){
         console.log('Sun editor::::;',content); //Get Content Inside Editor
     }
@@ -32,9 +37,9 @@ export default function SetNewArticle(){
                              
                             <SunEditor onChange={handleChange} setOptions={{
                                  height:200,
-                                 buttonList: [['undo', 'redo'],['font','fontSize', 'align','list'], 
-                                              ['image'],['bold', 'underline','hiliteColor','fontColor'],
-                                            ['table', 'link','formatBlock']]
+                                 buttonList: [['undo', 'redo'],['formatBlock'],
+                                 ['font','fontSize', 'align','list','bold', 'underline','hiliteColor','fontColor'], 
+                                 ['table', 'link','image']]
                             }}/>
                             
                             <div className="SetNewArticle__body-wrapper-form-keyworl">
@@ -52,19 +57,23 @@ export default function SetNewArticle(){
                                 <span>Select image</span>
                                 <div className="SetNewArticle__body-wrapper-form-aside-selectIMG-preview">
 
-                                </div>
-                                <input className="SetNewArticle__body-wrapper-form-aside-selectIMG-preview-input" type="file" name="imageForNewArticle" id="" />
+                                </div> 
                                 <button id="selector-img-artc">Select image article</button>
                             </div>
                             <div className="SetNewArticle__body-wrapper-form-aside-selectCategory">
                                 <span>Select Category</span>
                                 <select name="" id="category_select">
                                 <option value="">-----------------</option>
-                                    <option value="">34 sdf sdf dsf df</option>
-                                    <option value="">34 sdf sdf dsf df</option>
-                                    <option value="">34 sdf sdf dsf df</option>
-                                    <option value="">34 sdf sdf dsf df</option>
+                                    { 
+                                      categoiesToArray.map( (options,i)=>{
+                                       return( <option key={i} value={options}>{options}</option>)   
+                                     })
+                                    }
                                 </select>
+                                 <div className="SetNewArticle__body-wrapper-form-aside-addNewCategory">
+                                     <input type="text" id="newCategory" placeholder="add new category" />
+                                     <button id="newCategory-btn">Add new category</button>
+                                 </div> 
                             </div>
                         </div>
                     </form>
@@ -75,3 +84,5 @@ export default function SetNewArticle(){
         </>
     )
 }
+
+export default SetNewArticle

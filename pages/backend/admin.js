@@ -10,13 +10,13 @@ import Allarticles from '../../components/articles/allarticles';
 // import './homeadmin.css';  
  
  
-const Admin = () => { 
+const Admin = ({categories}) => { 
 
 const [adminbody, setAdminbody] = useState(<Allarticles />)
     let menu_select = (menutype)=>{  
       switch (menutype.target.id) {
         case 'new':
-            setAdminbody( <SetNewArticle />);
+            setAdminbody( <SetNewArticle categories={categories} />);
           break;
         //   case 'media':
         //   setmenuk( <Media />);
@@ -58,7 +58,7 @@ const [adminbody, setAdminbody] = useState(<Allarticles />)
                     </ul>
                 {/* </li> */}
                 {/* <li id="media" onClick={menu_select} >Multimedia</li> */}
-                
+             <li>Multimedia</li>
             <li>Maquetacion</li>
             <li>JavaScript</li>
             <li>PhP&MySQL</li>
@@ -76,6 +76,21 @@ const [adminbody, setAdminbody] = useState(<Allarticles />)
     </>
    ) 
   }
+
+
+  
+
+export async function getStaticProps() {  
+     let categorias = await firebase.firestore(db)
+     .collection('categoria').doc('todas').get(); 
+         let getCategorias = JSON.stringify(categorias.data());  
+      return {
+        props: {
+          categories: getCategorias, 
+        },
+      }
+   }
+
 
 
 export default Admin;
