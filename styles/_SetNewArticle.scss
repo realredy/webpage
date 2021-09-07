@@ -60,7 +60,7 @@
                           }
                         &-preview{
                             height: 80px;
-                            background: #f7f6ed;
+                            background: $bg-backg-bk-dark;
                             width: 95%;
                             margin:5px auto;
                             &-input{
@@ -83,9 +83,33 @@
                             @include input-rules;
                             display: block;
                             width: 95%;
-                            margin:10px auto;
-                            @include input-select-border;
+                            margin:10px auto; 
                           }
+                    }
+                    &-addNewCategory{
+                        input{
+                           @include input-rules; 
+                        @include input-select-border;
+                        width:95%; 
+                        margin:0 auto 10px;
+                        display:block;
+                        }
+                        
+                        button{
+                            background: gray;
+                            display: block;
+                            width: 95%;
+                            margin: 5px auto 10px;
+                            color: white;
+                            line-height: 30px;
+                            border-radius: 5px;
+                            text-align: center;
+                            border:none;
+                            &:hover{
+                                background: rgb(94, 94, 94);
+                                cursor: pointer;
+                            }
+                        }
                     }
                 }
 
@@ -110,6 +134,10 @@
                         border:none;
                         border-radius: $br-peque;
                         cursor: pointer;
+                        border:none;
+                        &:hover{
+                            background: rgb(98, 158, 226);
+                        }
                       }
                 }
             }
