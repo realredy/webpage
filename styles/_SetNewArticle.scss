@@ -60,7 +60,7 @@
                           }
                         &-preview{
                             height: 80px;
-                            background: #f7f6ed;
+                            background: $bg-backg-bk-dark;
                             width: 95%;
                             margin:5px auto;
                             &-input{
@@ -134,6 +134,10 @@
                         border:none;
                         border-radius: $br-peque;
                         cursor: pointer;
+                        border:none;
+                        &:hover{
+                            background: rgb(98, 158, 226);
+                        }
                       }
                 }
             }

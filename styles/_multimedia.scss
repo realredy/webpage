@@ -1,0 +1,73 @@
+@import '_global.scss'; 
+$multimediaClass: '.multimedia';
+
+#{$multimediaClass}{
+    @include body-inner-article;
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        span{
+            width: 100%;
+            background: $bg-backg-bk-dark;
+            display: block; 
+            margin-bottom: 15px;
+            line-height: 35px;
+            padding-left: $p-pequeno;
+        }
+        &--left{
+            width: 74%;
+            padding: $p-mediano;
+            background: white;
+            @include input-select-border;
+            &-form{
+                display: flex;
+                flex-direction: column;
+                input{
+                    @include input-rules;
+                    @include input-select-border;
+                }
+                input[type="submit"]{
+                    background: rgb(120, 183, 255);
+                    cursor: pointer;
+                    border-radius: $br-peque;
+                    border:none;
+                    &:hover{
+                        background: rgb(98, 158, 226);
+                    }
+                }
+            }
+
+            &-preloader{
+                // border: solid 1px rgba(98, 158, 226, 0.342); 
+                height: 5px;
+                position: relative;
+                overflow: hidden;
+                &-bar{ 
+                 background:  blue;  
+                 position: absolute;
+                height: 8px;
+                width: 0;
+                left: 0;
+                top: 0;
+                }
+            }
+        }
+        &--right{
+            width: 25%;
+            &-wrapper{
+                background: white;
+                box-sizing: border-box;
+                padding: $p-mediano;
+                span{
+                    margin-top: 10px;
+                    background: transparent;
+                }
+                @include input-select-border;
+                &-preloader{
+                    background: $bg-backg-bk-dark;
+                    height: 100px;
+                }
+            }
+        }
+    }
+}
