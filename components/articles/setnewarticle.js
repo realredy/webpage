@@ -11,7 +11,7 @@ import Panelmultimedia from '../multimedia/panelmultimedia';
   });
 
    
- function SetNewArticle({categories, conoo}){
+ function SetNewArticle({categories, collectionsImages}){
      const [pannelMM, setpannelMM] = useState()
 
      const categoriesToJson = JSON.parse(categories)
@@ -24,7 +24,11 @@ import Panelmultimedia from '../multimedia/panelmultimedia';
 
     let selectIMGforArticle = (e)=>{
         e.preventDefault()
-        setpannelMM(<Panelmultimedia allImages={conoo} />)
+        setpannelMM(<Panelmultimedia allImages={collectionsImages} />)
+        if(document.getElementsByClassName('panelmultimedia')[0]){
+            let showPannelImages = document.getElementsByClassName('panelmultimedia')[0]
+            showPannelImages.style.display = 'initial'
+        }
           
   }
  
@@ -70,6 +74,7 @@ import Panelmultimedia from '../multimedia/panelmultimedia';
                                 <div className="SetNewArticle__body-wrapper-form-aside-selectIMG-preview">
 
                                 </div> 
+                                <input type="hidden" name="" id="imageForArticle" />
                                 <button onClick={selectIMGforArticle} id="selector-img-artc">Select image article</button>
                             </div>
                             <div className="SetNewArticle__body-wrapper-form-aside-selectCategory">
