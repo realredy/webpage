@@ -65,7 +65,8 @@ $multimediaClass: '.multimedia';
                 @include input-select-border;
                 &-preloader{
                     background: $bg-backg-bk-dark;
-                    height: 100px;
+                    width: 100%;
+                    max-height: 100px;
                 }
             }
         }

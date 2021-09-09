@@ -94,7 +94,7 @@ let Multimedia = () => {
             </div>
             <div className="multimedia__wrapper--right">
                 <div className="multimedia__wrapper--right-wrapper">
-                    <Image src="/default.jpg"  className="multimedia__wrapper--right-wrapper-preloader" alt='ricardo lavour web master' width={300} height={180} />
+                    <img src="/defaultArticle.jpg"  className="multimedia__wrapper--right-wrapper-preloader" alt='ricardo lavour web master' width={300} height={180} />
 
                      
                     <span>Image preview</span>

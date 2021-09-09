@@ -1,11 +1,11 @@
  import Image from 'next/image'
  let setImageToForm = (e)=>{
-  //  console.log(e.target)
+  // console.log(e.target.attributes[0].value)
    if(document.getElementById('imageForArticle')){
      let imageInput = document.getElementById('imageForArticle');
      let backgroundPic = document.getElementsByClassName('SetNewArticle__body-wrapper-form-aside-selectIMG-preview')[0] 
      backgroundPic.style.backgroundImage = 'url('+e.target.currentSrc+')';
-     imageInput.value = e.target.outerHTML
+     imageInput.value = `${e.target.currentSrc}|${e.target.attributes[0].value}`
      imageInput.value ? document.getElementsByClassName('panelmultimedia')[0].style.display = 'none': alert('no added') 
    } 
  }
