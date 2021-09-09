@@ -1,0 +1,36 @@
+.panelmultimedia {
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    background: #000000de;
+    padding:6%;
+    z-index:6;
+    top:-5vh;
+    &__wrapper{
+        width: 84%;
+        position: relative;
+        ul{
+            padding: 0;
+            display: flex;
+            align-items: stretch;
+            flex-wrap: wrap;
+            li{ 
+                  list-style: none;
+                  padding: 10px;
+                  border: solid 1px #534040;
+                  width: 33%;
+                  overflow:hidden;
+                  img{
+                    width: 100%;
+                    transition: all 0.2s;
+                    &:hover{
+                        transform: scale(1.05, 1.1);
+                        cursor: pointer;
+                      }
+                  }
+                }
+          }
+      }
+  }
+    
+   

@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import {db} from '../../firebase/firebase';
 import 'firebase/storage'; 
 import React,{useEffect, useState} from 'react';
-
+import Image from 'next/image';
 //====================================================//
 // ---------------🕯 pre visualiuzador 🕯--------------- //
 //====================================================// 
@@ -36,7 +36,7 @@ let save_image = (e) => {
     e.preventDefault();
     const image = e.target[1].files[0];
     const image_type = e.target[1].files[0].type;
-    const image_name = e.target[1].files[0].name;
+    const image_name = e.target[1].files[0].name.split('.')[0]; // for get name and not name.jpg
     const title = e.target[0].value;  
     let extDividida = image_type.split('/')[1]; 
     const dbs = firebase.storage(db);
@@ -94,7 +94,7 @@ let Multimedia = () => {
             </div>
             <div className="multimedia__wrapper--right">
                 <div className="multimedia__wrapper--right-wrapper">
-                    <img src=""  className="multimedia__wrapper--right-wrapper-preloader" />
+                    <img src="/defaultArticle.jpg"  className="multimedia__wrapper--right-wrapper-preloader" alt='ricardo lavour web master' width={300} height={180} />
 
                      
                     <span>Image preview</span>

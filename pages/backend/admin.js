@@ -1,7 +1,8 @@
 import firebase from 'firebase/app'; 
 import {db} from '../../firebase/firebase';
 import 'firebase/auth'; 
-import 'firebase/storage'
+import 'firebase/storage';
+import "firebase/firestore";
 import React,{useEffect, useState} from 'react';
 import StatusBar from '../../components/Statusbar';
 import SetNewArticle from '../../components/articles/setnewarticle';
@@ -13,12 +14,12 @@ import Multimedia from '../../components/multimedia/multimedia';
  
  
 const Admin = ({categories}) => { 
-const [imagecollection, setImagecollection] = useState([])
+const [imagecollection, setImagecollection] = useState([{image:'',alt:''}])
 const [adminbody, setAdminbody] = useState(<Allarticles />)
     let menu_select = (menutype)=>{  
       switch (menutype.target.id) {
         case 'new':
-            setAdminbody( <SetNewArticle categories={categories} conoo={imagecollection}  />);
+            setAdminbody( <SetNewArticle categories={categories} collectionsImages={imagecollection}  />);
           break;
           case 'media':
             setAdminbody( <Multimedia />);
@@ -35,20 +36,32 @@ const [adminbody, setAdminbody] = useState(<Allarticles />)
 
     
 
-    useEffect( async ()=>{
+    useEffect( ()=>{
         let collect = []; 
-        await   firebase.storage(db).ref("all/").listAll()  
-        .then((imagesComming)=>{
-            imagesComming.items.map( (filterImages)=>{ 
-                filterImages.getDownloadURL().then((imageResult)=>{ 
-                             collect.push(imageResult)
-                })   
-            }) 
-        }) 
-        setImagecollection(collect)
+        let alts = [];
+          let FechDataImage = async  () => {
+        await  firebase.storage(db).ref("all/").listAll()  
+                .then((imagesComming)=>{
+                    imagesComming.items.map( (filterImages)=>{ 
+                        filterImages.getDownloadURL().then((imageResult)=>{  
+                                  collect.push(imageResult) 
+                                    //  collect.push(imageResult)
+                        })  
+                        //======= 
+                        filterImages.getMetadata().then((metadata)=>{
+                          alts.push(metadata.customMetadata.alt)  
+                          // console.log('metadata<><><><>>',metadata.customMetadata.alt)
+                        })
+                        //========
+                    })  
+                })
+          }
+          FechDataImage()
+        
+        setImagecollection({image:collect,alt:alts})
     },[])
 
-
+//  console.log('::::::::::',imagecollection)
 
 
     return (

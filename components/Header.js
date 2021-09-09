@@ -18,8 +18,11 @@ let Header = () =>{
     return (
         <>
         <Head>
-        <title>Ricardo lavour website</title>
-        <meta name="description" content="la manera de cambiar el estado" />
+        <title>Ricardo Lavour, My Full Stack Developer site</title>
+        <meta name="description" content="A place for set my portfolios, works, and write about technology topics" />
+        <meta name="keywords" content="web developer, web master, dominicano, full stack developer, wordpress developer"/>
+        <meta name="author" content="Ricardo Perez Lavour" />
+        <meta name="robots" content="index"/>
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:type" content="website" />
          <meta property="og:title" content="Ricardo E. Lavour" />
