@@ -1,21 +1,30 @@
 import firebase from 'firebase/app'; 
 import {db} from '../../firebase/firebase';
 import 'firebase/storage'; 
-import React,{useEffect, useState} from 'react';
+import React,{useRef, useState} from 'react';
 import Image from 'next/image';
-//====================================================//
+
+
+let Multimedia = () => {
+    const [preloadImage,setPreloadImage] = useState("/defaultArticle.jpg")
+    
+
+
+    //====================================================//
 // ---------------🕯 pre visualiuzador 🕯--------------- //
 //====================================================// 
-var preloader;
+// var preloader;
 let preview_image = (e) =>{ 
-    console.log(e)
+    // console.log(e)
 const image = e.target.files[0];
 const IMG_reader = new FileReader(); 
 IMG_reader.onload = function(){
 const metadata_img = IMG_reader.result;
-const output = document.getElementsByClassName('multimedia__wrapper--right-wrapper-preloader')[0];
-preloader = output
-output.src =  metadata_img;  
+// const output = document.getElementsByClassName('multimedia__wrapper--right-wrapper-preloader')[0];
+// console.log("🐧 ⚽ ~ line 24 ~ Multimedia ~ output", metadata_img)
+setPreloadImage(metadata_img)
+// preloader = output
+// output.src =  metadata_img;  
 };
 IMG_reader.readAsDataURL(image);
 return e; 
@@ -63,7 +72,8 @@ let save_image = (e) => {
             uploadBTN.disabled = false; 
         uploadBTN.value = 'upload image'
         loading_bar.style.width = 0;
-        preloader.src = '';
+        // preloader.src = '';
+        setPreloadImage("/defaultArticle.jpg")
         form.reset()
         console.log(ur) 
         })
@@ -72,8 +82,6 @@ let save_image = (e) => {
 //====================================================//
 // ---------------- UPLOAD to FIREBASE --------------- //
 //====================================================// 
-
-let Multimedia = () => {
 
     return (
     <>
@@ -94,8 +102,8 @@ let Multimedia = () => {
             </div>
             <div className="multimedia__wrapper--right">
                 <div className="multimedia__wrapper--right-wrapper">
-                    <img src="/defaultArticle.jpg"  className="multimedia__wrapper--right-wrapper-preloader" alt='ricardo lavour web master' width={300} height={180} />
-
+                    <Image src={preloadImage}  className="+multimedia__wrapper--right-wrapper-preloader" alt='ricardo lavour web master' width={300} height={180} />
+                    
                      
                     <span>Image preview</span>
                 </div>

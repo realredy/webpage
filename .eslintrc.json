@@ -1,10 +1,12 @@
-// {
-//   "extends": "next/core-web-vitals"
-// },
 {
-  "extends": "next",
-  "rules": {
-    "react/no-unescaped-entities": "off",
-    "@next/next/no-page-custom-font": "off"
-  }
+  "extends": "next/core-web-vitals"
 }
+// use this if you need put all rules of next like no build the app
+// if you use image and not img use link not <a> all stuff like this
+// {
+//   "extends": "next",
+//   "rules": {
+//     "react/no-unescaped-entities": "off",
+//     "@next/next/no-page-custom-font": "off"
+//   }
+// }

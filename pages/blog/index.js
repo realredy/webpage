@@ -23,14 +23,14 @@ return (
        <div className="bodyblog__body">
          <div className="bodyblog__body-wrapper">
          {
-      JSON.parse(mydata).map(function(doc, i){   
+      JSON.parse(mydata).map(function(doc, i){    
         let date = Date(doc.date.toString()) 
-        let sendLink = doc.title.split(" ").join("-")
-          
+        // let sendLink = doc.title.split(" ").join("-")
+        // let urlImage = doc.image.split(',')[0];
           return(
             <section key={i}>
               <div className="bodyblog__body-wrapper-link-box">
-                <img src={doc.img.split(',')[0]} alt={doc.img.split(',')[1]} width={800} height={325}  /> 
+                <Image src={doc.image} alt={doc.imageAlt} width={800} height={325}  /> 
                 <div className="bodyblog__body-wrapper-link-box-date">
                   <Image src="/calendar.svg" alt="ricardo lavour calendar icon" width={40} height={40} />
                   <span>{date.slice(4,10)}</span>
@@ -40,10 +40,10 @@ return (
               </div> 
               <div className="bodyblog__body-wrapper-link-title">
                 <h3>
-                <Link href={`/blog/${sendLink}`}>
-                 <a>
+                <Link href={`/blog/${doc.friendlyUrl}`}>
+                  
                    {doc.title} 
-                 </a>
+                 
                 </Link>
                  | ...leer Más
                 </h3>
@@ -73,7 +73,7 @@ return (
   
 
 export async function getStaticProps() {   
-     let data = await firebase.firestore(db).collection('blog-cogigos').get(); 
+     let data = await firebase.firestore(db).collection('articles').get(); 
          let tata = data.docs; 
         let pre = tata.map((fix)=>{ 
           return fix.data();  

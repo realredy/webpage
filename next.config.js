@@ -1,8 +1,12 @@
  module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['firebasestorage.googleapis.com'],
+    domains: ['firebasestorage.googleapis.com','https://localhost:3000'],
   },
+  // images: {
+  //   loader: 'imgix',
+  //   path: 'https://localhost:3000',
+  // },
   webpack5: true,
   distDir: 'build',
   env:{
