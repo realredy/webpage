@@ -48,17 +48,18 @@ function Single({datasingle}){
         </Head>
          <div className="single">
            {
-             JSON.parse(datasingle).map((single, i)=>{
+             JSON.parse(datasingle).map((single, i)=>{ 
+               
                  let date = Date(single.date.toString()) 
-                 let htm = parse(single.text);
-                 out_desc = single.text;
+                 let htm = parse(single.html);
+                 out_desc = single.friendlyUrl;
                   out_title = single.title;
                   out_date = date.slice(4,16);
-                  out_img = single.img.split(',')[0];
+                  out_img = single.image;
                return(
                  <div key={i} className="single__wrapper">
                 <div className="single__wrapper-image-date">
-                  <img src={single.img.split(',')[0]} alt={single.img.split(',')[1]} width={800} height={325} quality={100} />
+                  <Image src={single.image} alt={single.imageAlt} width={800} height={325} quality={100} />
                   <span>{date.slice(4,16)}</span>
                 </div> 
                   <h1>{single.title}</h1>
@@ -84,13 +85,13 @@ function Single({datasingle}){
 
 // path
 export async function getStaticPaths() { 
-  const getdatafire = await firebase.firestore(db).collection('blog-cogigos').get(); 
+  const getdatafire = await firebase.firestore(db).collection('articles').get(); 
   const datafire = getdatafire.docs;  
           
             
  let prams = datafire.map(data=>{
           
-    return{  params:{ id: data.data().title} }  
+    return{  params:{ id: data.data().friendlyUrl} }  
   }) 
 
    return{
@@ -106,14 +107,12 @@ export async function getStaticProps(context) {
 const dataParams = context.params.id; 
 let confirm = dataParams.split("-").join(" ");
 
-     let data = await firebase.firestore(db).collection('blog-cogigos').where("title", "==", confirm).get(); 
+     let data = await firebase.firestore(db).collection('articles').where("friendlyUrl", "==", confirm).get(); 
          let tata = data.docs; 
         let pre = tata.map((fix)=>{ 
         
           return fix.data();   
-         }) 
-
-        //  console.log('rep',pre)
+         })  
       return {
         props: {
           datasingle: JSON.stringify(pre),

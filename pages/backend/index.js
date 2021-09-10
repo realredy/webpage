@@ -2,6 +2,7 @@
 import firebase from 'firebase/app'; 
 import {db} from '../../firebase/firebase';
 import 'firebase/auth'; 
+import Link from 'next/link'
   
  
 async  function formMakeLoguin(e){ 
@@ -44,7 +45,7 @@ function Login() {
     return (
         <div id="loguinForm" style={backSt} >
                 <div className="loguinForm__BoxWrapper">
-                <a href="/"><Image src='/logo.png' alt="error Mensaje"  width={90} height={80}/></a>
+                <Link href="/" passHref><Image src='/logo.png' alt="error Mensaje"  width={90} height={80}/></Link>
                   <div className="loguinForm__wrapper"> 
                     <span className="loguinForm__title">
                       Coloque su email y password 

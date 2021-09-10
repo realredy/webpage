@@ -48,16 +48,18 @@ import Panelmultimedia from '../multimedia/panelmultimedia';
         console.log(formElemetns)
              savedataToFirebase(formElemetns) 
      }
-
+   
 //====================================================//
 // ---------------- SAVE DATA TO URL --------------- //
 //====================================================// 
 let savedataToFirebase = async (dataForm) =>{
+console.log("🚀 ~ file: setnewarticle.js ~ line 56 ~ savedataToFirebase ~ dataForm", dataForm)
+    
     let spinner = document.querySelector('.SetNewArticle__body-wrapper-form-SendResset span');
     let form = document.querySelector('.SetNewArticle__body-wrapper-form');
     let preview = document.getElementsByClassName('SetNewArticle__body-wrapper-form-aside-selectIMG-preview')[0]
     
-    
+     
     spinner.style.opacity = 1;
         //------------------------------------- 
         let fullfilldata = {
